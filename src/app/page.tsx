@@ -6,13 +6,6 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const useMakeString = (content: string, maxContentLength: number) => {
-  if (content.length > maxContentLength) {
-    return content.substring(0, maxContentLength) + "...";
-  }
-  return content;
-};
-
 export default async function Home() {
   const postsDirectory = path.join(process.cwd(), '/src/app/posts');
   const fileNames = fs.readdirSync(postsDirectory);
