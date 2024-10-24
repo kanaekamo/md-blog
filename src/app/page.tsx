@@ -20,7 +20,7 @@ export default async function Home() {
       };
     })
   ).then((posts) =>
-    posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
+    posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
   );
 
   return (
